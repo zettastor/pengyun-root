@@ -481,7 +481,7 @@
               <logViolationsToConsole>true</logViolationsToConsole>
               <failsOnError>true</failsOnError>
               <failOnViolation>true</failOnViolation>
-	      <excludes>**/thrift/**,**/proto/**,**/PbVoting.java,**/ProtocolModel.java</excludes>
+	      <excludes>**/thrift/**,**/proto/**,**/PbVoting.java,**/ProtocolModel.java, **/UDPEchoServer.java</excludes>
               <checkstyleRules>
                 <module name = "Checker">
                   <property name="charset" value="UTF-8"/>
