@@ -12,6 +12,7 @@ default:
       ls -l pom.xml
       xmlstarlet ed --inplace --omit-decl --ps -N pom="http://maven.apache.org/POM/4.0.0" --delete '/pom:project/pom:modules' pom.xml
       ls -l pom.xml
+      cat pom.xml
       mvn -e -T1C clean install -Dproguard=off -DskipTests
     after:
       upstream: rm -rf ./*
