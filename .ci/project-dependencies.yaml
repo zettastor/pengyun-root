@@ -1,0 +1,12 @@
+version: "2.1"
+
+dependencies:
+  - project: lanewu/pengyun-root
+  
+  - project: lanewu/pengyun-lib
+    dependencies:    
+      - project: lanewu/pengyun-root
+
+  - project: lanewu/pengyun-database_core
+    dependencies:    
+      - project: lanewu/pengyun-lib
