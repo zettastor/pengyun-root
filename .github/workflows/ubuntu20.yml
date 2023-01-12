@@ -24,15 +24,15 @@ jobs:
           path: ~/.m2
           key: ${{ runner.os }}-${{ matrix.java-version }}-m2-${{ hashFiles('**/pom.xml') }}
           restore-keys: ${{ runner.os }}-${{ matrix.java-version }}-m2
-      
+
       - name: Install required packages
         run: |
           sudo apt-get update
-      
+          sudo apt-get install -y curl protobuf-compiler xmlstarlet
       - name: Build Chain ${{ matrix.java-version }}
         id: build-chain
         uses: kiegroup/github-action-build-chain@v2.6.25
         with:
-          definition-file: https://raw.githubusercontent.com/${GROUP}/my-app-a/${BRANCH}/.ci/pull-request-config.yaml
+          definition-file: https://raw.githubusercontent.com/${GROUP}/pengyun-root/${BRANCH}/.ci/pull-request-config.yaml
         env:
           GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
