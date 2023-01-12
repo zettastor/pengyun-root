@@ -5,12 +5,12 @@ dependencies: ./project-dependencies.yaml
 default:
   build-command:
     current: |
-      xmlstarlet ed --inplace --omit-decl --ps -N pom="http://maven.apache.org/POM/4.0.0" --delete '/pom:project/pom:modules' pom.xml
+      xmlstarlet ed --inplace --omit-decl --ps -N pom="http://maven.apache.org/POM/4.0.0" --delete '/pom:project/pom:modules/pom:module' pom.xml
       mvn -e clean install
     upstream: |
-      xmlstarlet ed --inplace --omit-decl --ps -N pom="http://maven.apache.org/POM/4.0.0" --delete '/pom:project/pom:modules' pom.xml
-      sed -i -r "s|<modules>|<modules2>|" pom.xml
-      sed -i -r "s|</modules>|</modules2>|" pom.xml
+      xmlstarlet ed --inplace --omit-decl --ps -N pom="http://maven.apache.org/POM/4.0.0" --delete '/pom:project/pom:modules/pom:module' pom.xml
+      #sed -i -r "s|<modules>|<modules2>|" pom.xml
+      #sed -i -r "s|</modules>|</modules2>|" pom.xml
       mvn versions:set-property -Dproperty=libthrift.version -DnewVersion=$(thrift --version | awk '{print $3}')
       mvn versions:set-property -Dproperty=protobuf.version -DnewVersion=$(protoc --version | awk '{print $2}')
       cat pom.xml
