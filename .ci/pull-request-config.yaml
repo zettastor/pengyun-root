@@ -5,13 +5,13 @@ dependencies: ./project-dependencies.yaml
 default:
   build-command:
     current: |
-      pwd
       mvn -e clean install
     upstream: |
-      pwd
       mvn versions:set-property -Dproperty=libthrift.version -DnewVersion=$(thrift --version | awk '{print $3}')
       mvn versions:set-property -Dproperty=protobuf.version -DnewVersion=$(protoc --version | awk '{print $2}')
+      ls -l pom.xml
       xmlstarlet ed --inplace --omit-decl --ps -N pom="http://maven.apache.org/POM/4.0.0" --delete '/pom:project/pom:modules' pom.xml
+      ls -l pom.xml
       mvn -e -T1C clean install -Dproguard=off -DskipTests
     after:
       upstream: rm -rf ./*
