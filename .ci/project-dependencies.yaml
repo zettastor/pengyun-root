@@ -7,6 +7,10 @@ dependencies:
     dependencies:    
       - project: lanewu/pengyun-root
 
-  - project: lanewu/pengyun-database_core
+  - project: lanewu/pengyun-core
     dependencies:    
       - project: lanewu/pengyun-lib
+
+  - project: lanewu/pengyun-database_core
+    dependencies:    
+      - project: lanewu/pengyun-core
