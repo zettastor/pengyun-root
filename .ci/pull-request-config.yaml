@@ -6,9 +6,9 @@ default:
   build-command:
     current: |
       mvn -e clean install
-      ls -l /home/runner/.m2/repository/
     upstream: |
+      mvn versions:set-property -Dproperty=libthrift.version -DnewVersion=$(thrift --version | awk '{print $3}')
+      mvn versions:set-property -Dproperty=protobuf.version -DnewVersion=$(protoc --version | awk '{print $2}')
       mvn -e -T1C clean install -DskipTests
-      ls -l /home/runner/.m2/repository/
     after:
       upstream: rm -rf ./*
