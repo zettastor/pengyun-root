@@ -1,0 +1,14 @@
+version: "2.1"
+
+dependencies: ./project-dependencies.yaml
+
+default:
+  build-command:
+    current: |
+      mvn -e clean install
+      ls -l /home/runner/.m2/repository/
+    upstream: |
+      mvn -e -T1C clean install -DskipTests
+      ls -l /home/runner/.m2/repository/
+    after:
+      upstream: rm -rf ./*
