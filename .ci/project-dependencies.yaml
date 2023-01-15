@@ -1,0 +1,124 @@
+version: "2.1"
+
+dependencies:
+  - project: zettastor/pengyun-root
+  
+  - project: zettastor/pengyun-lib
+    dependencies:
+      - project: zettastor/pengyun-root
+
+  - project: zettastor/pengyun-core
+    dependencies:
+      - project: zettastor/pengyun-lib
+
+  - project: zettastor/pengyun-database_core
+    dependencies:
+      - project: zettastor/pengyun-core
+
+  - project: zettastor/pengyun-models
+    dependencies:
+      - project: zettastor/pengyun-lib
+      
+  - project: zettastor/pengyun-dih_model
+    dependencies:
+      - project: zettastor/pengyun-core
+      - project: zettastor/pengyun-models
+
+  - project: zettastor/pengyun-dih_client
+    dependencies:
+      - project: zettastor/pengyun-dih_model
+
+  - project: zettastor/pengyun-query_log
+    dependencies:
+      - project: zettastor/pengyun-core
+
+  - project: zettastor/pengyun-configuration_common
+    dependencies:
+      - project: zettastor/pengyun-lib
+  
+  - project: zettastor/pengyun-monitor_common
+    dependencies:
+      - project: zettastor/pengyun-query_log
+      - project: zettastor/pengyun-models
+
+  - project: zettastor/pengyun-dbs
+    dependencies:
+      - project: zettastor/pengyun-root
+      - project: zettastor/pengyun-core
+      - project: zettastor/pengyun-models
+
+  - project: zettastor/dbs-dnmodel
+    dependencies:
+      - project: zettastor/pengyun-dbs
+
+  - project: zettastor/dbs-models_related
+    dependencies:
+      - project: zettastor/pengyun-dbs
+      - project: zettastor/pengyun-dih_client
+      - project: zettastor/dbs-dnmodel
+
+  - project: zettastor/pengyun-driver_core
+    dependencies:
+      - project: zettastor/pengyun-dbs
+      - project: zettastor/dbs-models_related
+
+  - project: zettastor/pengyun-coordinator
+    dependencies:
+      - project: zettastor/pengyun-dbs
+      - project: zettastor/pengyun-driver_core
+      - project: zettastor/pengyun-query_log
+      - project: zettastor/pengyun-configuration_common
+
+  - project: zettastor/pengyun-infocenter
+    dependencies:
+      - project: zettastor/pengyun-dbs
+      - project: zettastor/dbs-models_related
+      - project: zettastor/pengyun-coordinator
+
+  - project: zettastor/pengyun-drivercontainer
+    dependencies:
+      - project: zettastor/pengyun-dbs
+      - project: zettastor/pengyun-driver_core
+      - project: zettastor/pengyun-configuration_common
+
+  - project: zettastor/pengyun-deployment_daemon
+    dependencies:
+      - project: zettastor/pengyun-dbs
+      - project: zettastor/dbs-models_related
+      - project: zettastor/pengyun-driver_core
+      - project: zettastor/pengyun-configuration_common
+
+  - project: zettastor/pengyun-datanode_core
+    dependencies:
+      - project: zettastor/pengyun-dbs
+      - project: zettastor/dbs-models_related
+      - project: zettastor/pengyun-database_core
+
+  - project: zettastor/pengyun-datanode_service
+    dependencies:
+      - project: zettastor/pengyun-dbs
+      - project: zettastor/pengyun-datanode_core
+
+  - project: zettastor/pengyun-datanode
+    dependencies:
+      - project: zettastor/pengyun-dbs
+      - project: zettastor/pengyun-datanode_service
+      - project: zettastor/pengyun-query_log
+      - project: zettastor/pengyun-configuration_common
+
+  - project: zettastor/pengyun-webservice_adapter
+    dependencies:
+      - project: zettastor/pengyun-dbs
+      - project: zettastor/dbs-models_related
+
+  - project: zettastor/pengyun-utils
+    dependencies:
+      - project: zettastor/pengyun-dbs
+      - project: zettastor/pengyun-coordinator
+      - project: zettastor/pengyun-datanode_core
+
+  - project: zettastor/pengyun-console
+    dependencies:
+      - project: zettastor/pengyun-dbs
+      - project: zettastor/pengyun-webservice_adapter
+      - project: zettastor/pengyun-configuration_common

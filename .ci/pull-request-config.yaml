@@ -1,0 +1,31 @@
+version: "2.1"
+
+dependencies: ./project-dependencies.yaml
+
+default:
+  build-command:
+    upstream: |
+      bash -c "if [[ $(pwd) == *pengyun_root || $(pwd) == *pengyun_lib || $(pwd) == *pengyun_dbs ]]; then xmlstarlet ed --inplace --omit-decl --ps -N pom='http://maven.apache.org/POM/4.0.0' --delete '/pom:project/pom:modules' pom.xml; fi"
+      bash -c "if [[ $(pwd) == *pengyun_root ]]; then mvn versions:set-property -Dproperty=libthrift.version -DnewVersion=$(thrift --version | awk '{print $3}'); fi"
+      bash -c "if [[ $(pwd) == *pengyun_root ]]; then mvn versions:set-property -Dproperty=protobuf.version -DnewVersion=$(protoc --version | awk '{print $2}'); fi"
+      bash -c "if [[ $(pwd) == *dbs_dnmodel || $(pwd) == *dbs_models_related || $(pwd) == *pengyun_driver_core || $(pwd) == *pengyun_coordinator ]]; then xmlstarlet ed --inplace --omit-decl --ps -N pom='http://maven.apache.org/POM/4.0.0' -u '/pom:project/pom:parent/pom:version' -v '1.0.0-OS-SNAPSHOT' pom.xml; fi"
+      bash -c "if [[ $(pwd) == *dbs_dnmodel || $(pwd) == *dbs_models_related || $(pwd) == *pengyun_driver_core || $(pwd) == *pengyun_coordinator ]]; then xmlstarlet ed --inplace --omit-decl --ps -N pom='http://maven.apache.org/POM/4.0.0' -s '/pom:project/pom:parent' --type elem --name relativePath -v '../zettastor_pengyun_dbs/pom.xml' pom.xml; fi"
+      bash -c "if [[ $(pwd) == *pengyun_infocenter || $(pwd) == *pengyun_drivercontainer || $(pwd) == *pengyun_deployment_daemon ]]; then xmlstarlet ed --inplace --omit-decl --ps -N pom='http://maven.apache.org/POM/4.0.0' -u '/pom:project/pom:parent/pom:version' -v '1.0.0-OS-SNAPSHOT' pom.xml; fi"
+      bash -c "if [[ $(pwd) == *pengyun_infocenter || $(pwd) == *pengyun_drivercontainer || $(pwd) == *pengyun_deployment_daemon ]]; then xmlstarlet ed --inplace --omit-decl --ps -N pom='http://maven.apache.org/POM/4.0.0' -s '/pom:project/pom:parent' --type elem --name relativePath -v '../zettastor_pengyun_dbs/pom.xml' pom.xml; fi"
+      bash -c "if [[ $(pwd) == *pengyun_datanode_core || $(pwd) == *pengyun_datanode_service || $(pwd) == *pengyun_datanode ]]; then xmlstarlet ed --inplace --omit-decl --ps -N pom='http://maven.apache.org/POM/4.0.0' -u '/pom:project/pom:parent/pom:version' -v '1.0.0-OS-SNAPSHOT' pom.xml; fi"
+      bash -c "if [[ $(pwd) == *pengyun_datanode_core || $(pwd) == *pengyun_datanode_service || $(pwd) == *pengyun_datanode ]]; then xmlstarlet ed --inplace --omit-decl --ps -N pom='http://maven.apache.org/POM/4.0.0' -s '/pom:project/pom:parent' --type elem --name relativePath -v '../zettastor_pengyun_dbs/pom.xml' pom.xml; fi"
+      bash -c "if [[ $(pwd) == *pengyun_webservice_adapter || $(pwd) == *pengyun_utils || $(pwd) == *pengyun_console ]]; then xmlstarlet ed --inplace --omit-decl --ps -N pom='http://maven.apache.org/POM/4.0.0' -u '/pom:project/pom:parent/pom:version' -v '1.0.0-OS-SNAPSHOT' pom.xml; fi"
+      bash -c "if [[ $(pwd) == *pengyun_webservice_adapter || $(pwd) == *pengyun_utils || $(pwd) == *pengyun_console ]]; then xmlstarlet ed --inplace --omit-decl --ps -N pom='http://maven.apache.org/POM/4.0.0' -s '/pom:project/pom:parent' --type elem --name relativePath -v '../zettastor_pengyun_dbs/pom.xml' pom.xml; fi"
+      mvn -e -T1C clean install -Dproguard=off -DskipTests
+    current: |
+      bash -c "if [[ $(pwd) == *dbs_dnmodel || $(pwd) == *dbs_models_related || $(pwd) == *pengyun_driver_core || $(pwd) == *pengyun_coordinator ]]; then xmlstarlet ed --inplace --omit-decl --ps -N pom='http://maven.apache.org/POM/4.0.0' -u '/pom:project/pom:parent/pom:version' -v '1.0.0-OS-SNAPSHOT' pom.xml; fi"
+      bash -c "if [[ $(pwd) == *dbs_dnmodel || $(pwd) == *dbs_models_related || $(pwd) == *pengyun_driver_core || $(pwd) == *pengyun_coordinator ]]; then xmlstarlet ed --inplace --omit-decl --ps -N pom='http://maven.apache.org/POM/4.0.0' -s '/pom:project/pom:parent' --type elem --name relativePath -v '../zettastor_pengyun_dbs/pom.xml' pom.xml; fi"
+      bash -c "if [[ $(pwd) == *pengyun_infocenter || $(pwd) == *pengyun_drivercontainer || $(pwd) == *pengyun_deployment_daemon ]]; then xmlstarlet ed --inplace --omit-decl --ps -N pom='http://maven.apache.org/POM/4.0.0' -u '/pom:project/pom:parent/pom:version' -v '1.0.0-OS-SNAPSHOT' pom.xml; fi"
+      bash -c "if [[ $(pwd) == *pengyun_infocenter || $(pwd) == *pengyun_drivercontainer || $(pwd) == *pengyun_deployment_daemon ]]; then xmlstarlet ed --inplace --omit-decl --ps -N pom='http://maven.apache.org/POM/4.0.0' -s '/pom:project/pom:parent' --type elem --name relativePath -v '../zettastor_pengyun_dbs/pom.xml' pom.xml; fi"
+      bash -c "if [[ $(pwd) == *pengyun_datanode_core || $(pwd) == *pengyun_datanode_service || $(pwd) == *pengyun_datanode ]]; then xmlstarlet ed --inplace --omit-decl --ps -N pom='http://maven.apache.org/POM/4.0.0' -u '/pom:project/pom:parent/pom:version' -v '1.0.0-OS-SNAPSHOT' pom.xml; fi"
+      bash -c "if [[ $(pwd) == *pengyun_datanode_core || $(pwd) == *pengyun_datanode_service || $(pwd) == *pengyun_datanode ]]; then xmlstarlet ed --inplace --omit-decl --ps -N pom='http://maven.apache.org/POM/4.0.0' -s '/pom:project/pom:parent' --type elem --name relativePath -v '../zettastor_pengyun_dbs/pom.xml' pom.xml; fi"
+      bash -c "if [[ $(pwd) == *pengyun_webservice_adapter || $(pwd) == *pengyun_utils || $(pwd) == *pengyun_console ]]; then xmlstarlet ed --inplace --omit-decl --ps -N pom='http://maven.apache.org/POM/4.0.0' -u '/pom:project/pom:parent/pom:version' -v '1.0.0-OS-SNAPSHOT' pom.xml; fi"
+      bash -c "if [[ $(pwd) == *pengyun_webservice_adapter || $(pwd) == *pengyun_utils || $(pwd) == *pengyun_console ]]; then xmlstarlet ed --inplace --omit-decl --ps -N pom='http://maven.apache.org/POM/4.0.0' -s '/pom:project/pom:parent' --type elem --name relativePath -v '../zettastor_pengyun_dbs/pom.xml' pom.xml; fi"
+      mvn -e clean install -Dproguard=off
+    after:
+      upstream: rm -rf ./*

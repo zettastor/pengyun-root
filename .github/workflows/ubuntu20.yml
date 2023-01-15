@@ -1,0 +1,36 @@
+name: Ubuntu 20
+on: 
+  workflow_dispatch:
+  workflow_call:
+
+jobs:
+  build:
+    strategy:
+      matrix:
+        java-version: [ '11' ]
+      fail-fast: true
+    
+    runs-on: ubuntu-20.04
+    
+    steps:
+      - name: Set up JDK ${{ matrix.java-version }}
+        uses: actions/setup-java@v3
+        with:
+          java-version: ${{ matrix.java-version }}
+          distribution: 'temurin'
+
+      - name: Install required packages
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y curl protobuf-compiler xmlstarlet
+          curl -LO http://ftp.debian.org/debian/pool/main/t/thrift-compiler/thrift-compiler_0.9.1-2.1+b1_amd64.deb
+          sudo dpkg -i thrift-compiler_0.9.1-2.1+b1_amd64.deb
+          rm thrift-compiler_0.9.1-2.1+b1_amd64.deb
+      
+      - name: Build Chain ${{ matrix.java-version }}
+        id: build-chain
+        uses: kiegroup/github-action-build-chain@v2.6.25
+        with:
+          definition-file: https://raw.githubusercontent.com/${GROUP}/pengyun-root/${BRANCH}/.ci/pull-request-config.yaml
+        env:
+          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
