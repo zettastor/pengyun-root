@@ -179,7 +179,6 @@
     <commons.io.version>2.6</commons.io.version>
     <testng.version>6.8.7</testng.version>
     <commons.net.version>3.6</commons.net.version>
-    <javassist.version>3.4.GA</javassist.version>
     <jackson.databind.version>2.1.1</jackson.databind.version>
     <junit.version>4.13.2</junit.version>
     <mockito.core.version>2.9.0</mockito.core.version>
@@ -237,12 +236,6 @@
       <groupId>commons-net</groupId>
       <artifactId>commons-net</artifactId>
       <version>${commons.net.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>javassist</groupId>
-      <artifactId>javassist</artifactId>
-      <version>${javassist.version}</version>
-      <scope>compile</scope>
     </dependency>
     <dependency>
       <groupId>com.fasterxml.jackson.core</groupId>
