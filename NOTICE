@@ -1,0 +1,185 @@
+Apache PYSTOR DBS
+Copyright (C) 2013-2024 Nanjing Pengyun Network Technology Co., Ltd.
+
+This product includes software developed at
+The Apache Software Foundation (http://www.apache.org/).
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+   http://www.apache.org/licenses/LICENSE-2.0
+
+
+## Third Party Software Notices and Information
+1.
+This product includes software developed at The Apache Software Foundation (http://www.apache.org/).
+- Project: Apache Thrift
+- Version Used: 0.91 0.93
+- License: Apache License, Version 2.0
+- URL: https://thrift.apache.org/
+Copyright 2004-2023 The Apache Software Foundation
+
+2.
+This project incorporates software components from the Netty project.
+- Project Name: Netty
+- Version Used:  3.7.0 4.1.32
+- Homepage: https://netty.io/
+- License: Apache License, Version 2.0
+- License URL: https://www.apache.org/licenses/LICENSE-2.0
+Copyright 2008-2024 The Netty Project, All rights reserved.
+
+3.
+This project utilizes the Apache Tomcat web server and related components in version 8.5.50.
+- Project Name: Apache Tomcat
+- Version Used: 8.5.50
+- Homepage: https://tomcat.apache.org/
+- License: Apache License, Version 2.0
+- License URL: https://www.apache.org/licenses/LICENSE-2.0
+Copyright 1999-2022 The Apache Software Foundation. All rights reserved.
+
+4. 
+This software pengyun-core contains code derived from midpoint developed at Evolveum
+- License: cddl1 
+- URL: https://github.com/Evolveum/midpoint/
+
+5.
+This software pengyun-core contains code derived from ilves
+Copyright (c) 2013 Edin Dazdarevic (edin.dazdarevic@gmail.com)
+- License: The MIT License
+- URL: https://github.com/bubblecloud/ilves/
+
+6.
+This software pengyun-core contains code derived from javasysmon
+Copyright 2009 ThoughtWorks, Inc. All rights reserved.
+- License: NetBSD (2-line) 
+- URL: https://github.com/jezhumble/javasysmon
+
+7.
+This software pengyun-console incorporates software components from the JQuery zTree excheck project.
+- Project Name: JQuery zTree excheck
+- Version Used: v3.5.28
+- Homepage: http://treejs.cn/
+- License: MIT License
+- License URL: http://www.opensource.org/licenses/mit-license.php
+Copyright (c) 2010 Hunter.z
+Email: hunter.z@263.net
+Last Updated: 2017-01-20
+
+8.
+This software pengyun-console incorporates software components from the JQuery zTree core project.
+- Project Name: JQuery zTree core
+- Version Used: v3.5.29
+- Homepage: http://treejs.cn/
+- License: MIT License
+- License URL: http://www.opensource.org/licenses/mit-license.php
+Copyright (c) 2010 Hunter.z
+Email: hunter.z@263.net
+Last Updated: 2017-06-19
+
+9.
+This software pengyun-console incorporates software components from the JQuery zTree exedit project.
+- Project Name: JQuery zTree exedit
+- Version Used: v3.5.29
+- Homepage: http://treejs.cn/
+- License: MIT License
+- License URL: http://www.opensource.org/licenses/mit-license.php
+Copyright (c) 2010 Hunter.z
+Email: hunter.z@263.net
+Last Updated: 2017-06-19
+
+10.
+This software pengyun-console incorporates software components from the Bootstrap project.
+- Project Name: Bootstrap
+- Version Used: v3.3.7
+- Homepage: http://getbootstrap.com
+- License:  MIT 
+- License URL: https://github.com/twbs/bootstrap/blob/master/LICENSE
+Copyright 2011-2016 Twitter, Inc.
+
+11.
+This software pengyun-console incorporates software components from the jqGrid project.
+- Project Name: jqFilter  jQuery jqGrid filter addon.
+- License:  MIT 
+- License URL: http://www.opensource.org/licenses/mit-license.php
+Copyright (c) 2008, Tony Tomov, tony@trirand.com,
+Copyright (c) 2007,2008 Brice Burgess <bhb@iceburg.net>,
+Copyright (c) 2007 Brice Burgess <bhb@iceburg.net>, http://www.iceburg.net,Author:Stefan Goessner/2006,Author:Michael Schøler/2008-01-29,
+Copyright (c) 2011, Tony Tomov, tony@trirand.com,Author:Tony Tomov,Author: Mark Williams
+
+12.
+This software pengyun-console incorporates software components from the jqDnR project.
+- Project Name: jqDnR - Minimalistic Drag'n'Resize for jQuery.
+- License:  MIT 
+- License URL: http://www.opensource.org/licenses/mit-license.php
+Copyright (c) 2007 Brice Burgess <bhb@iceburg.net>, http://www.iceburg.net
+
+13.
+This project utilizes the Apache ZooKeeper related components in version 3.4.6.
+- Project Name: Apache ZooKeeper
+- Version Used: 3.4.6
+- Homepage: https://zookeeper.apache.org/
+- License: Apache License, Version 2.0
+- License URL: https://www.apache.org/licenses/LICENSE-2.0
+Copyright © 2010-2020 The Apache Software Foundation, Licensed under the Apache License, Version 2.0.
+
+14.
+This project utilizes some perl modules as follows:
+- Module Name: Class::Accessor
+- Version Used: 0.34
+- Homepage: https://metacpan.org/pod/Class::Accessor 
+- Copyright and License : 
+Copyright 2017 Marty Pauley <marty+perl@martian.org>
+This program is free software; you can redistribute it and/or modify it under the same terms as Perl itself. That means either (a) the GNU General Public License or (b) the Artistic License.
+
+
+- Module Name: Config::Properties
+- Version Used: 1.77
+- Homepage: https://metacpan.org/pod/Config::Properties
+- Copyright and License :
+Copyright 2001, 2002 by Randy Jay Yarger Copyright 2002, 2003 by Craig Manley. Copyright 2003-2009, 2011-2012, 2014-2015 by Salvador Fandiño.
+This library is free software; you can redistribute it and/or modify it under the same terms as Perl itself.
+
+
+- Module Name: Expect
+- Version Used: 1.15
+- Homepage: https://metacpan.org/pod/Expect
+- Copyright and License :
+(c) 1997 Austin Schutz <ASchutz@users.sourceforge.net> (retired)
+expect() interface & functionality enhancements (c) 1999-2006 Roland Giersig.
+This module is now maintained by Dave Jacoby <jacoby@cpan.org>
+
+- Module Name: IO::Tty
+- Version Used: 1.16
+- Homepage: https://metacpan.org/pod/IO::Tty
+- Copyright and License :
+Now all code is free software; you can redistribute it and/or modify it under the same terms as Perl itself.
+
+- Module Name: JSON
+- Version Used: 2.90
+- Homepage: https://metacpan.org/pod/JSON
+- Copyright and License :
+Copyright 2005-2013 by Makamaka Hannyaharamitu
+Most of the documentation is taken from JSON::XS by Marc Lehmann
+This library is free software; you can redistribute it and/or modify it under the same terms as Perl itself.
+
+- Module Name: Log::Log4perl
+- Version Used: 1.49
+- Homepage: https://metacpan.org/pod/Log::Log4perl
+- Copyright and License :
+Copyright 2002-2013 by Mike Schilli <m@perlmeister.com> and Kevin Goess <cpan@goess.org>.
+This library is free software; you can redistribute it and/or modify it under the same terms as Perl itself.
+
+- Module Name: Net::OpenSSH
+- Version Used: 0.82
+- Homepage: https://metacpan.org/pod/Net::OpenSSH
+- Copyright and License :
+Copyright (C) 2008-2022 by Salvador Fandiño (sfandino@yahoo.com)
+This library is free software; you can redistribute it and/or modify it under the same terms as Perl itself, either Perl version 5.10.0 or, at your option, any later version of Perl 5 you may have available.
+
+- Module Name: Net::SSH::Expect
+- Version Used: 1.09
+- Homepage: https://metacpan.org/dist/Net-SSH-Expect/view/lib/Net/SSH/Expect.pod
+- Copyright and License :
+Copyright (C) 2007 by Bruno Negrao Guimaraes Zica
+This library is free software; you can redistribute it and/or modify it under the same terms as Perl itself, either Perl version 5.8.3 or, at your option, any later version of Perl 5 you may have available.
